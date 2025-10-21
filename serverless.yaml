@@ -30,7 +30,3 @@ functions:
           path: /api/contacts/*
           method: any
           cors: true
-      - https:
-          path: /api/contacts/*
-          method: any
-          cors: true
