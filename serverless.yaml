@@ -27,6 +27,6 @@ functions:
     handler: handler.handler
     events:
       - http:
-          path: /api/contacts/*
+          path: /api/contacts/{proxy+}
           method: any
           cors: true
