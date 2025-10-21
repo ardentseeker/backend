@@ -29,4 +29,18 @@ functions:
       - http:
           path: /api/contacts/{proxy+}
           method: any
-          cors: true
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+            methods:
+              - OPTIONS
+              - GET
+              - POST
+              - PUT
+              - DELETE
