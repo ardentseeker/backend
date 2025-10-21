@@ -1,0 +1,19 @@
+service: contact-app
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-west-2
+  memorySize: 256
+  timeout: 10
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - http:
+          path: /api/contacts
+          method: any
+      - http:
+          path: /api/contacts/*
+          method: any
