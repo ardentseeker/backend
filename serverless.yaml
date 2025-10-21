@@ -7,6 +7,17 @@ provider:
   memorySize: 256
   timeout: 10
 
+IAMRoleStatements:
+  - Effect: "Allow"
+    Action:
+      - "dynamodb:PutItem"
+      - "dynamodb:GetItem"
+      - "dynamodb:UpdateItem"
+      - "dynamodb:DeleteItem"
+      - "dynamodb:Scan"
+    Resource:
+      - "arn:aws:dynamodb:us-west-2:*:table/ContactsTable"
+
 functions:
   api:
     handler: handler.handler
@@ -14,6 +25,8 @@ functions:
       - http:
           path: /api/contacts
           method: any
+          cors: true
       - http:
           path: /api/contacts/*
           method: any
+          cors: true
