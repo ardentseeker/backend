@@ -10,7 +10,7 @@ phases:
       - npm install -g serverless@3
   build:
     commands:
-      - serverless deploy --stage production --region us-west-2
+      - serverless deploy --stage prod --region us-west-2
   post_build:
     commands:
       - echo "Deployment completed!"
