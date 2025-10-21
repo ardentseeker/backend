@@ -27,6 +27,24 @@ functions:
     handler: handler.handler
     events:
       - http:
+          path: /api/contacts
+          method: any
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+            methods:
+              - OPTIONS
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      - http:
           path: /api/contacts/{proxy+}
           method: any
           cors:
