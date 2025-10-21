@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+  pre_build:
+    commands:
+      - npm install
+      - npm install -g serverless
+  build:
+    commands:
+      - serverless deploy --stage production --region us-west-2
+  post_build:
+    commands:
+      - echo "Deployment completed!"
+artifacts:
+  files:
+    - '**/*'  
